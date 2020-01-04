@@ -6,16 +6,21 @@ import yelp from "../api/yelp";
 const SearchScreen = () => {
   const [query, setQuery] = useState("");
   const [data, setData] = useState([]);
+  const [error, setError] = useState("");
 
   const request = async () => {
-    const response = await yelp.get("/search", {
-      params: {
-        limit: 50,
-        term: query,
-        location: "berlin"
-      }
-    });
-    setData(response.data.businesses);
+    try {
+      const response = await yelp.get("/search", {
+        params: {
+          limit: 50,
+          term: query,
+          location: "berlin"
+        }
+      });
+      setData(response.data.businesses);
+    } catch (err) {
+      setError("Something went wrong");
+    }
   };
 
   return (
@@ -25,7 +30,7 @@ const SearchScreen = () => {
         onQueryChange={newQuery => setQuery(newQuery)}
         onQuerySumbit={() => request()}
       />
-      <Text>Search Screen</Text>
+      {error ? <Text>{error}</Text> : null}
       <Text>We found {data.length} results</Text>
     </View>
   );
