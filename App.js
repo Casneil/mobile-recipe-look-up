@@ -11,7 +11,7 @@ const Navigator = createStackNavigator(
   {
     initialRouteName: "Search",
     defaultNavigationOptions: {
-      title: "Mobile Cook"
+      title: "Cas Suche"
     }
   }
 );

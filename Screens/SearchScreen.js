@@ -1,13 +1,21 @@
 import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import SearchBar from "../components/SearchBar";
-import yelp from "../api/yelp";
 import useSearchResults from "../hooks/useSearchResults";
+import ResultsList from "../components/ResultsList";
 
 const SearchScreen = () => {
   const [query, setQuery] = useState("");
   const [request, data, error] = useSearchResults();
 
+  /*********************Functions************************/
+  const filterByPrice = price => {
+    // price from data api  = $ || $$ || $$
+    return data.filter(result => {
+      return result.price === price;
+    });
+  };
+  /*********************Functions************************/
   return (
     <View>
       <SearchBar
@@ -17,6 +25,9 @@ const SearchScreen = () => {
       />
       {error ? <Text>{error}</Text> : null}
       <Text>We found {data.length} results</Text>
+      <ResultsList title="Cost Effective" results={filterByPrice("€")} />
+      <ResultsList title="Bit Expensive" results={filterByPrice("€€")} />
+      <ResultsList title="Very Expensive" results={filterByPrice("€€€")} />
     </View>
   );
 };
