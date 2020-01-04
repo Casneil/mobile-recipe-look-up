@@ -24,7 +24,7 @@ const SearchScreen = () => {
         onQuerySumbit={() => request(query)}
       />
       {error ? <Text>{error}</Text> : null}
-      <Text>We found {data.length} results</Text>
+      {/* <Text>We found {data.length} results</Text> */}
       <ResultsList title="Cost Effective" results={filterByPrice("€")} />
       <ResultsList title="Bit Expensive" results={filterByPrice("€€")} />
       <ResultsList title="Very Expensive" results={filterByPrice("€€€")} />
