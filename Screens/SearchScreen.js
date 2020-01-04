@@ -2,33 +2,18 @@ import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import SearchBar from "../components/SearchBar";
 import yelp from "../api/yelp";
+import useSearchResults from "../hooks/useSearchResults";
 
 const SearchScreen = () => {
   const [query, setQuery] = useState("");
-  const [data, setData] = useState([]);
-  const [error, setError] = useState("");
-
-  const request = async () => {
-    try {
-      const response = await yelp.get("/search", {
-        params: {
-          limit: 50,
-          term: query,
-          location: "berlin"
-        }
-      });
-      setData(response.data.businesses);
-    } catch (err) {
-      setError("Something went wrong");
-    }
-  };
+  const [request, data, error] = useSearchResults();
 
   return (
     <View>
       <SearchBar
         query={query}
         onQueryChange={newQuery => setQuery(newQuery)}
-        onQuerySumbit={() => request()}
+        onQuerySumbit={() => request(query)}
       />
       {error ? <Text>{error}</Text> : null}
       <Text>We found {data.length} results</Text>

@@ -3,6 +3,7 @@ import SearchScreen from "./Screens/SearchScreen";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
+/*********************Functions************************/
 const Navigator = createStackNavigator(
   {
     Search: SearchScreen
@@ -14,5 +15,6 @@ const Navigator = createStackNavigator(
     }
   }
 );
+/*********************Functions************************/
 
 export default createAppContainer(Navigator);
