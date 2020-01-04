@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text } from "react-native";
 import SearchBar from "../components/SearchBar";
 
 const SearchScreen = () => {
+  const [query, setQuery] = useState("");
   return (
     <View>
       <SearchBar />
