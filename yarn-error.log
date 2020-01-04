@@ -1,5 +1,5 @@
 Arguments: 
-  D:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-community
+  D:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add axios
 
 PATH: 
   C:\Users\paran\bin;D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\local\bin;D:\Program Files\Git\usr\bin;D:\Program Files\Git\usr\bin;D:\Program Files\Git\mingw64\bin;D:\Program Files\Git\usr\bin;C:\Users\paran\bin;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\MinGW\bin;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;D:\Program Files\Java\jdk-12\bin;D:\Program Files\nodejs;C:\Program Files (x86)\Yarn\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;D:\Program Files\Android\platform-tools;D:\Program Files\Git\cmd;C:\Users\paran\AppData\Local\Programs\Python\Python38-32\Scripts;C:\Users\paran\AppData\Local\Programs\Python\Python38-32;C:\Users\paran\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Microsoft VS Code\bin;C:\Users\paran\AppData\Roaming\npm;C:\Users\paran\AppData\Local\atom\bin;C:\Users\paran\AppData\Local\Yarn\bin;C:\Users\paran\AppData\Local\Microsoft\WindowsApps;D:\Program Files\Android\platform-tools;D:\Program Files\flutter\bin;D:\Program Files\Git\usr\bin\vendor_perl;D:\Program Files\Git\usr\bin\core_perl
@@ -14,17 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/react-native-community: Not found
-      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\cli.js:66027:18)
-      at Request.self.callback (C:\Program Files (x86)\Yarn\lib\cli.js:140539:22)
-      at Request.emit (events.js:198:13)
-      at Request.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141511:10)
-      at Request.emit (events.js:198:13)
-      at IncomingMessage.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:141433:12)
-      at Object.onceWrapper (events.js:286:20)
-      at IncomingMessage.emit (events.js:203:15)
-      at endReadableNT (_stream_readable.js:1145:12)
-      at process._tickCallback (internal/process/next_tick.js:63:19)
+  Error: EPERM: operation not permitted, unlink 'D:\Javascript\Native-Apps\Recipe-App\mobile-cook-look-up\node_modules\@babel\generator\node_modules\.bin'
 
 npm manifest: 
   {
@@ -37,6 +27,7 @@ npm manifest:
       "eject": "expo eject"
     },
     "dependencies": {
+      "@react-native-community/masked-view": "^0.1.5",
       "expo": "~36.0.0",
       "react": "~16.9.0",
       "react-dom": "~16.9.0",
