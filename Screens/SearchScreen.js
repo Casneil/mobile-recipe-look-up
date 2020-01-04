@@ -3,12 +3,16 @@ import { StyleSheet, View, Text } from "react-native";
 import SearchBar from "../components/SearchBar";
 
 const SearchScreen = () => {
-  const [term, setTerm] = useState("");
+  const [query, setQuery] = useState("");
   return (
     <View>
-      <SearchBar term={term} onTermChange={newTerm => setTerm(newTerm)} />
+      <SearchBar
+        query={query}
+        onQueryChange={newQuery => setQuery(newQuery)}
+        onQuerySumbit={() => console.log("Term submitted")}
+      />
       <Text>Search Screen</Text>
-      <Text>{term}</Text>
+      <Text>{query}</Text>
     </View>
   );
 };
