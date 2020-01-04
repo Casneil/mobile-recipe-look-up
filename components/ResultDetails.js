@@ -1,6 +1,5 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
-import useSearchResults from "../hooks/useSearchResults";
 
 const ResultDetails = ({ result }) => {
   return (

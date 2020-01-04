@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, View, Text } from "react-native";
+import { StyleSheet, View, Text, ScrollView } from "react-native";
 import SearchBar from "../components/SearchBar";
 import useSearchResults from "../hooks/useSearchResults";
 import ResultsList from "../components/ResultsList";
@@ -17,18 +17,23 @@ const SearchScreen = () => {
   };
   /*********************Functions************************/
   return (
-    <View>
+    <>
       <SearchBar
         query={query}
         onQueryChange={newQuery => setQuery(newQuery)}
         onQuerySumbit={() => request(query)}
       />
       {error ? <Text>{error}</Text> : null}
-      {/* <Text>We found {data.length} results</Text> */}
-      <ResultsList title="Cost Effective" results={filterByPrice("€")} />
-      <ResultsList title="Bit Expensive" results={filterByPrice("€€")} />
-      <ResultsList title="Very Expensive" results={filterByPrice("€€€")} />
-    </View>
+      <ScrollView>
+        <ResultsList title="Cost Effective" results={filterByPrice("€")} />
+        <ResultsList title="Bit Expensive" results={filterByPrice("€€")} />
+        <ResultsList title="Very Expensive" results={filterByPrice("€€€")} />
+        <ResultsList
+          title="Very Very Expensive"
+          results={filterByPrice("€€€€")}
+        />
+      </ScrollView>
+    </>
   );
 };
 
