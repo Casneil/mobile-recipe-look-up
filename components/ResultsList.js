@@ -10,7 +10,6 @@ import {
 import { withNavigation } from "react-navigation";
 import ResultDetails from "../components/ResultDetails";
 import { green } from "../colors/Colors";
-import beach from "../images/beach.jpg";
 
 const ResultsList = ({ title, results, navigation }) => {
   if (results.length === 0) {

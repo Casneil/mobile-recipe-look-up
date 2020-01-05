@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { StyleSheet, View, Text, FlatList, Image } from "react-native";
 import yelp from "../api/api";
-
+import { yellow, darkGrey, green } from "../colors/Colors";
 const DetailsScreen = ({ navigation }) => {
   const id = navigation.getParam("id");
   const [data, setData] = useState(null);
+  //   console.log(data);
 
   /*********************Functions************************/
   const getResultData = async id => {
@@ -23,12 +24,16 @@ const DetailsScreen = ({ navigation }) => {
   }
   return (
     <View style={{ flex: 1 }}>
+      <Text style={styles.heading}>{data.name}</Text>
+      <Text style={styles.title}>{data.location.city}</Text>
       <Text style={styles.title}>
-        {data.name} Location: {data.location.address1} {data.location.address2}
+        {data.location.address1} {data.location.address2}
       </Text>
-      <Text style={styles.title}>{data.display_phone}</Text>
+      <Text style={styles.title}>Phone: {data.display_phone}</Text>
       <FlatList
         data={data.photos}
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
         keyExtractor={photo => photo}
         renderItem={({ item }) => {
           return <Image style={styles.image} source={{ uri: item }} />;
@@ -45,15 +50,31 @@ const styles = StyleSheet.create({
     alignItems: "center"
   },
   image: {
+    width: 298,
+    borderRadius: 6,
     height: 180,
-    width: 200,
-    marginLeft: 12
+    marginBottom: 6,
+    marginLeft: 12,
+    marginTop: 6
   },
   title: {
     fontSize: 19,
     fontWeight: "bold",
-    marginLeft: 12,
-    marginBottom: 4
+    // marginLeft: 12,
+    marginBottom: 4,
+    color: green,
+    marginTop: 0.5,
+    alignSelf: "center"
+  },
+  heading: {
+    fontSize: 22,
+    fontWeight: "bold",
+    // marginLeft: 12,
+    marginBottom: 15,
+    color: yellow,
+    marginTop: 8,
+    alignSelf: "center"
+    // justifyContent: "center"
   }
 });
 
