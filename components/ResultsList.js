@@ -4,13 +4,22 @@ import {
   View,
   Text,
   FlatList,
-  TouchableOpacity
+  TouchableOpacity,
+  ImageBackground
 } from "react-native";
 import { withNavigation } from "react-navigation";
 import ResultDetails from "../components/ResultDetails";
 import { green } from "../colors/Colors";
+import beach from "../images/beach.jpg";
 
 const ResultsList = ({ title, results, navigation }) => {
+  if (results.length === 0) {
+    return null;
+    //   <ImageBackground
+    //     source={beach}
+    //     style={{ flex: 1, width: 200, height: 200 }}
+    //   ></ImageBackground>
+  }
   return (
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
