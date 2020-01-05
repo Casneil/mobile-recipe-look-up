@@ -1,6 +1,7 @@
 import React from "react";
 import { StyleSheet, View, TextInput } from "react-native";
 import { Feather } from "@expo/vector-icons";
+import { lightGreen, darkGrey } from "../colors/Colors";
 
 const SearchBar = ({ query, onQueryChange, onQuerySumbit }) => {
   return (
@@ -21,13 +22,14 @@ const SearchBar = ({ query, onQueryChange, onQuerySumbit }) => {
 
 const styles = StyleSheet.create({
   backgroundStyle: {
-    backgroundColor: "#dbd9d9",
+    // backgroundColor: "#dbd9d9",
     height: 50,
     borderRadius: 8,
     marginHorizontal: 12,
     flexDirection: "row",
     marginTop: 10,
-    marginBottom: 10
+    marginBottom: 10,
+    backgroundColor: lightGreen
   },
   inputStyle: {
     flex: 1,
@@ -36,7 +38,8 @@ const styles = StyleSheet.create({
   iconStyle: {
     fontSize: 34,
     alignSelf: "center",
-    marginHorizontal: 8
+    marginHorizontal: 8,
+    color: darkGrey
   }
 });
 

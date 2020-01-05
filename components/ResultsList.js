@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { withNavigation } from "react-navigation";
 import ResultDetails from "../components/ResultDetails";
+import { green } from "../colors/Colors";
 
 const ResultsList = ({ title, results, navigation }) => {
   return (
@@ -37,7 +38,8 @@ const styles = StyleSheet.create({
     fontSize: 19,
     fontWeight: "bold",
     marginLeft: 12,
-    marginBottom: 4
+    marginBottom: 4,
+    color: green
   },
   container: {
     marginBottom: 9

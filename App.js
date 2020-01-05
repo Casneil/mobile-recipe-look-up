@@ -1,4 +1,4 @@
-import React from "react";
+import { StyleSheet } from "react-native";
 import SearchScreen from "./Screens/SearchScreen";
 import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";

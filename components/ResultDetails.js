@@ -1,12 +1,13 @@
 import React from "react";
 import { StyleSheet, View, Text, Image } from "react-native";
+import { darkGrey, yellow } from "../colors/Colors";
 
 const ResultDetails = ({ result }) => {
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={{ uri: result.image_url }} />
       <Text style={styles.title}>{result.name}</Text>
-      <Text>
+      <Text style={styles.subTitle}>
         {result.rating} Stars, {result.review_count} Reviews
       </Text>
     </View>
@@ -25,7 +26,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: "bold",
-    fontSize: 15
+    fontSize: 15,
+    color: yellow
+  },
+  subTitle: {
+    color: darkGrey
   }
 });
 
