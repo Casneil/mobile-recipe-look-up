@@ -13,7 +13,8 @@ const Navigator = createStackNavigator(
   {
     initialRouteName: "Search",
     defaultNavigationOptions: {
-      title: "Cas Suche"
+      title: "Cas Suche",
+      headerTitleAlign: "center"
     }
   }
 );

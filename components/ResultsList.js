@@ -14,6 +14,7 @@ import { green } from "../colors/Colors";
 const ResultsList = ({ title, results, navigation }) => {
   if (results.length === 0) {
     return null;
+
     //   <ImageBackground
     //     source={beach}
     //     style={{ flex: 1, width: 200, height: 200 }}
